@@ -997,9 +997,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434138129545e94488e681d45190ce1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  weapons: []
+  weapons:
+  - {fileID: 669556106}
   currentWeapon: {fileID: 0}
   animator: {fileID: 0}
+  weaponHitBox: {fileID: 0}
 --- !u!1 &2039858744
 GameObject:
   m_ObjectHideFlags: 0

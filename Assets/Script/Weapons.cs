@@ -9,6 +9,7 @@ public class Weapons : MonoBehaviour
     public List<GameObject> weapons = new List<GameObject>();
     public GameObject currentWeapon;
     public Animator animator;
+    public BoxCollider2D weaponHitBox;
     
     #endregion
     
@@ -29,10 +30,18 @@ public class Weapons : MonoBehaviour
         GameManager.OnChangeMask += ChangeMask;
         
         animator = GetComponent<Animator>();
+        
+        //temp
+        currentWeapon = weapons[0];
+        weaponHitBox = currentWeapon.GetComponent<BoxCollider2D>();
+        weaponHitBox.enabled = false; 
+        
     }
 
     public void PlayAnimation()
     {
+        
+        
         switch (gm.currentMask)
         {
             case playerMask.Red:
@@ -50,17 +59,17 @@ public class Weapons : MonoBehaviour
 
     public void ChangeMask(playerMask mask)
     {
-        
+        currentWeapon = weapons[(int)mask];
     }
 
     public void WeaponsHit()
     {
-        currentWeapon.GetComponent<BoxCollider2D>().enabled = true;
+       weaponHitBox.enabled = true;
     }
 
     public void WeaponsNoHit()
     {
-        currentWeapon.GetComponent<BoxCollider2D>().enabled = false;
+        weaponHitBox.enabled = false;
     }
 
     public void AnimationEnd()

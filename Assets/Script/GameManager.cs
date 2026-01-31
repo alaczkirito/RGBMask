@@ -73,6 +73,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        var mouse = Mouse.current;
+        if (mouse == null) return;
+
+        if (mouse.leftButton.wasPressedThisFrame)
+        {
+            weaponScript.PlayAnimation();
+        }
+        
         var kb = Keyboard.current;
         if (kb == null) return;
         
