@@ -76,9 +76,10 @@ public class GameManager : MonoBehaviour
         var mouse = Mouse.current;
         if (mouse == null) return;
 
-        if (mouse.leftButton.wasPressedThisFrame)
+        if (mouse.leftButton.isPressed && !isAttacking)
         {
             weaponScript.PlayAnimation();
+            isAttacking = true;
         }
         
         var kb = Keyboard.current;

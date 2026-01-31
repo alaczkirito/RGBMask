@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class Damagables : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public bool isPlayer;
+    public bool isEnemy;
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("PlayerWeapon") || collision.gameObject.CompareTag("PlayerBullet"))
+        {
+            Debug.Log("Hit");
+        }
     }
 }

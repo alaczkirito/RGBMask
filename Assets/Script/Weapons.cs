@@ -40,8 +40,6 @@ public class Weapons : MonoBehaviour
 
     public void PlayAnimation()
     {
-        
-        
         switch (gm.currentMask)
         {
             case playerMask.Red:
@@ -51,8 +49,7 @@ public class Weapons : MonoBehaviour
 
                 break;
             case playerMask.Green:
-                animator.Play("SwordSwing");
-                
+                animator.Play("SwordSwing", 0, 0f);
                 break;
         }
     }
