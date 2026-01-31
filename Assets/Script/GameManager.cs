@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     
     [Header("Player")] 
     public GameObject player;
+    public Player playerScript;
     public Rigidbody2D playerRB;
     public float CurrentHP;
     public float MaxHP;
@@ -91,11 +92,11 @@ public class GameManager : MonoBehaviour
             isDashing = true;
         }
         
-        // Vector2 targetVelocity = playerDirection * moveSpeed;
-        //
-        // Vector2 currentVelocity = targetVelocity - playerRB.linearVelocity;
-        //
-        // playerRB.linearVelocity += currentVelocity;
+        if(kb.digit1Key.wasPressedThisFrame) playerScript.ChangeMask(playerMask.Red);
+        if(kb.digit2Key.wasPressedThisFrame) playerScript.ChangeMask(playerMask.Green);
+        if(kb.digit3Key.wasPressedThisFrame) playerScript.ChangeMask(playerMask.Blue);
+        
+        
     }
 
     void FixedUpdate()
@@ -124,6 +125,13 @@ public class GameManager : MonoBehaviour
     void DashCoolDown()
     {
         
+    }
+
+    void ChangeMask(playerMask mask)
+    {
+        playerScript.ChangeMask(mask);
+        
+        //Stat change later
     }
     
     #endregion
