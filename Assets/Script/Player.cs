@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
         gm.player = gameObject;
         gm.playerRB = GetComponent<Rigidbody2D>();
         gm.playerScript = this;
+        GameManager.OnChangeMask += ChangeMask;
     }
 
     public void ChangeMask(playerMask newMask)

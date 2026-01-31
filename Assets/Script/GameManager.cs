@@ -15,11 +15,16 @@ public class GameManager : MonoBehaviour
     
     [Header("Game Manager")]
     public static GameManager Instance { get; private set; }
+
+    public static Action<playerMask> OnChangeMask;
     
     [Header("Player")] 
     public GameObject player;
     public Player playerScript;
     public Rigidbody2D playerRB;
+    public playerMask currentMask = playerMask.Green;
+    public GameObject weapons;
+    public Weapons weaponScript;
     public float CurrentHP;
     public float MaxHP;
     public float CurrentMana;
@@ -38,7 +43,6 @@ public class GameManager : MonoBehaviour
     public float moveSpeed;
     public Vector2 playerDirection = new Vector2(0,0);
     public Vector2 lastDirection = new Vector2(0,0);
-    public playerMask currentMask = playerMask.Green;
     public bool isAttacking = false;
     public bool canAttack = true;
     public float attackDamage;
@@ -63,6 +67,8 @@ public class GameManager : MonoBehaviour
         
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        OnChangeMask += ChangeMask;
     }
 
     void Update()
@@ -132,6 +138,11 @@ public class GameManager : MonoBehaviour
         playerScript.ChangeMask(mask);
         
         //Stat change later
+    }
+
+    void PlayerAttack()
+    {
+        
     }
     
     #endregion
