@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public enum playerMask
 {
-    Red,
+    //Red,
     Green,
     Blue
 }
@@ -107,9 +107,9 @@ public class GameManager : MonoBehaviour
             isDashing = true;
         }
         
-        if(kb.digit1Key.wasPressedThisFrame) playerScript.ChangeMask(playerMask.Red);
-        if(kb.digit2Key.wasPressedThisFrame) playerScript.ChangeMask(playerMask.Green);
-        if(kb.digit3Key.wasPressedThisFrame) playerScript.ChangeMask(playerMask.Blue);
+        //if(kb.digit1Key.wasPressedThisFrame) playerScript.ChangeMask(playerMask.Red);
+        if(kb.digit2Key.wasPressedThisFrame) OnChangeMask.Invoke(playerMask.Green);
+        if(kb.digit3Key.wasPressedThisFrame) OnChangeMask.Invoke(playerMask.Blue);
         
         
     }
@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
 
     void ChangeMask(playerMask mask)
     {
-        playerScript.ChangeMask(mask);
+        currentMask = mask;
         
         //Stat change later
     }

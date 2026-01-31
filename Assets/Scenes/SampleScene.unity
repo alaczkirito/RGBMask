@@ -340,7 +340,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerScript: {fileID: 0}
   playerRB: {fileID: 0}
-  currentMask: 1
+  currentMask: 0
   weapons: {fileID: 0}
   weaponScript: {fileID: 0}
   CurrentHP: 0
@@ -829,37 +829,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.2}
   m_EdgeRadius: 0
---- !u!1 &950221539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 950221540}
-  m_Layer: 0
-  m_Name: StaffPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &950221540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950221539}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1867326366}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &988272767
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &988272768
 Transform:
   m_ObjectHideFlags: 0
@@ -885,14 +854,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988272767}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7933534, w: 0.6087614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 669556107}
   m_Father: {fileID: 1867326366}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 105}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &988272769
 SpriteRenderer:
   serializedVersion: 2
@@ -999,7 +968,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   masks:
-  - {fileID: 8166710274925509176, guid: 143f9dcb5629c7e47b14e93e20f1e8e4, type: 3}
   - {fileID: -6099873399732076034, guid: f993635e0dc01044faf84dab96af1a91, type: 3}
   - {fileID: -2615874204119335, guid: 1ec9b7c6008a73140bba0f4cc94636de, type: 3}
 --- !u!50 &1448116131
@@ -1131,16 +1099,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867326365}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.60876137, w: 0.7933534}
   m_LocalPosition: {x: -0.734, y: 0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 988272768}
-  - {fileID: 950221540}
   - {fileID: 1934924532}
   m_Father: {fileID: 84420631}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 75}
 --- !u!95 &1867326368
 Animator:
   serializedVersion: 7
@@ -1177,9 +1144,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   weapons:
   - {fileID: 669556106}
+  - {fileID: 1934924531}
   currentWeapon: {fileID: 0}
   animator: {fileID: 0}
   weaponHitBox: {fileID: 0}
+  presets:
+  - position: {x: -0.55, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 105}
+    scale: {x: 1, y: 1, z: 1}
+  - position: {x: 0.75, y: 0.2, z: 0}
+    rotation: {x: 0, y: 0, z: 105}
+    scale: {x: 1, y: 1, z: 1}
 --- !u!1 &1934924531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1934924532
 Transform:
   m_ObjectHideFlags: 0
