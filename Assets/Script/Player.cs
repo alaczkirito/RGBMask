@@ -6,7 +6,11 @@ public class Player : MonoBehaviour
 
     [Header("Masks")] 
     public Sprite[] masks;
+    public Sprite[] backgrounds;
+    public SpriteRenderer maskRender;
+    public SpriteRenderer bgRender;
     
+
     #endregion
     
     #region Private Variables
@@ -28,7 +32,8 @@ public class Player : MonoBehaviour
 
     public void ChangeMask(playerMask newMask)
     {
-        GetComponent<SpriteRenderer>().sprite = masks[(int)newMask];
+        maskRender.sprite = masks[(int)newMask];
+        bgRender.sprite = backgrounds[(int)newMask];
     }
     
     #endregion
