@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Canvas" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Test%20Pixel%20Art%20Draw/New%20Render%20Texture.renderTexture?fileID=8400000&amp;guid=39040faf91d4b2d478628d1cc362e4b8&amp;type=2#New Render Texture&quot;); -unity-background-scale-mode: scale-to-fit;"/>
+    <ui:Button text="Button" name="Clear" style="position: absolute; font-size: 28px;"/>
+</ui:UXML>

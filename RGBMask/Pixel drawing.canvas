@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"c9036e0da5f0e266","type":"file","file":"Code/Variables.md","x":-1160,"y":-540,"width":1080,"height":460},
+		{"id":"89d941ffcb9a43a3","type":"file","file":"Code/Awake.md","x":160,"y":-520,"width":400,"height":440},
+		{"id":"3059bbd4d8cf6f53","type":"file","file":"Code/InitMask.md","x":860,"y":-580,"width":1020,"height":560},
+		{"id":"34fb7297bee9f5f3","type":"file","file":"Code/InitTexture.md","x":860,"y":160,"width":1020,"height":920},
+		{"id":"6292f2e5f5732878","type":"file","file":"GetPixels32.md","x":860,"y":-1940,"width":1020,"height":1140},
+		{"id":"ff25f1673bd0bed4","x":2478,"y":-210,"width":522,"height":430,"type":"file","file":"Code/Update.md"}
+	],
+	"edges":[
+		{"id":"093151bbb54720f4","fromNode":"89d941ffcb9a43a3","fromSide":"right","toNode":"3059bbd4d8cf6f53","toSide":"left"},
+		{"id":"6928386020d004bb","fromNode":"3059bbd4d8cf6f53","fromSide":"top","toNode":"6292f2e5f5732878","toSide":"bottom"},
+		{"id":"a69a22a2e5d75f41","fromNode":"89d941ffcb9a43a3","fromSide":"right","toNode":"34fb7297bee9f5f3","toSide":"left"},
+		{"id":"5684253bcbac7f43","fromNode":"3059bbd4d8cf6f53","fromSide":"right","toNode":"ff25f1673bd0bed4","toSide":"left"},
+		{"id":"b96b50630d1f7a52","fromNode":"34fb7297bee9f5f3","fromSide":"right","toNode":"ff25f1673bd0bed4","toSide":"left"}
+	]
+}

@@ -7,14 +7,20 @@ public class Movement : MonoBehaviour
     
         public float speed;
         public Vector2 position;
-        //public Vector2 velocity;
         public Vector2 direction;
+        public Rigidbody2D rbRead => rb;
         
+    #endregion
+
+    #region  Protected Variables
+
+    protected Rigidbody2D rb;
+
     #endregion
     
     #region Private Variables
     
-        private Rigidbody2D rb;
+        
     
     #endregion
     

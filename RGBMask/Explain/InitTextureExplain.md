@@ -1,0 +1,8 @@
+- Initialize an empty texture variable first, set the filter mode for crisp pixels
+- buffer is used to hold painted pixels so that the texture is changed by batch, not one by one. This is more efficient
+- painted is a boolean array to check if the pixel at that location is painted or not. Dimension doesn't matter here so it is made 1D
+- First, we set the buffer to be a empty canvas
+- Set the texture to the blank buffer
+- Stop mipmap regeneration to be faster
+- Attach texture to sprite renderer
+- Create the sprite to actually hold the texture

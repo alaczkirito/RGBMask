@@ -12,11 +12,10 @@ public class PlayerMovement : Movement
     
     #region Private Variables
 
-    private InputAction movementKey;
+        private InputAction movementKey;
+        private InputAction dashKey;
         private Vector2 inputVector;
-        
-        [SerializeField]
-        private float playerSpeed = 10;
+        private float dashTimer;
     
     #endregion
     
@@ -25,20 +24,30 @@ public class PlayerMovement : Movement
     protected override void Start()
     {
         base.Start();
-    
-        // var playerMap = asset.FindActionMap("Player");
-        // playerMap.Enable();
-    
+
+        speed = 10;
+
         movementKey = InputSystem.actions.FindAction("Move");
+        dashKey = InputSystem.actions.FindAction("Sprint");
         
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (movementKey.IsPressed()) inputVector = movementKey.ReadValue<Vector2>();
-        Move(playerSpeed, inputVector);
+        else inputVector = Vector2.zero;
+        Move(speed, inputVector);
+        
+        if (dashKey.WasPressedThisFrame()) Dash();
+        if (dashTimer > 0) dashTimer -= Time.deltaTime;
+        if (dashTimer <= 0 && speed > 10) speed -= 10;
     }
-    
+
+    private void Dash()
+    {
+        dashTimer = 0.2f;
+        speed = 100;
+    }
     
 }
