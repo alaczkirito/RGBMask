@@ -1,0 +1,6 @@
+- If no input device, go back (wait)
+- if no input, go back (wait)
+- read current mouse position
+- return if mouse havent return a position yet
+- Screen to world point
+- Try paint
